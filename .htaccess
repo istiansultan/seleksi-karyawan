@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^admin modul/main.php [L]
+RewriteRule ^penguji modul/user.php [L]
+RewriteRule ^logout config/logout.php [L]
+
+RewriteRule ^guru modul/guru/view_guru.php [L]
+RewriteRule ^profil-user modul/guru/view_user.php [L]
+RewriteRule ^aksi-pegawai modul/guru/aksi_pegawai.php [L]
+
+RewriteRule ^jurnal modul/jurnal/view_jurnal.php [L]
+RewriteRule ^tambah-jurnal modul/jurnal/tambah_jurnal.php [L]
+RewriteRule ^aksi-jurnal modul/jurnal/aksi_jurnal.php [L]
+
+RewriteRule ^penilaian modul/nilai/penilaian.php [L]
+
+RewriteRule ^upload-file modul/upload/view_file.php [L]
+RewriteRule ^aksi-file modul/upload/aksi_file.php [L]
+
+Options All -Indexes
+</IfModule>
