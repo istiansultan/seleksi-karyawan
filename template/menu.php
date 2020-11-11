@@ -5,17 +5,33 @@
         <ul class="metismenu" id="menu-bar">
           <li class="menu-title">Navigation</li>
 
-          <li>
-            <a href="index.html">
-              <i data-feather="home"></i>
-              <span class="badge badge-success float-right">1</span>
+
+          <?php
+          if ($_SESSION['level'] == 'admin') {
+            echo " <li>
+              <a href='admin'>
+              <i data-feather='home'></i>
+              <span class='badge badge-success float-right'>1</span>
               <span> Awal </span>
             </a>
-          </li>
+          </li>";
+          } else {
+            echo " <li>
+              <a href='penguji'>
+              <i data-feather='home'></i>
+              <span class='badge badge-success float-right'>1</span>
+              <span> Awal </span>
+            </a>
+          </li>";
+          }
+
+
+          ?>
+
           <li>
-            <a href="apps-calendar.html">
+            <a href="valid-nilai.html">
               <i data-feather="file-text"></i>
-              <span> Rekap Penilaian </span>
+              <span> Validasi Nilai </span>
             </a>
           </li>
 

@@ -25,10 +25,55 @@
 
 <!-- page js -->
 <script src="assets/js/pages/dashboard.init.js"></script>
-
+<!-- Plugin js-->
+<script src="assets/libs/parsleyjs/parsley.min.js"></script>
+<script src="assets/js/pages/form-validation.init.js"></script>
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#simpan').click(function() {
+      $("#quickform").valid();
+    });
+    $('#quickForm').validate({
+      rules: {
+        n1: {
+          required: true,
+        },
+        n2: {
+          required: true,
+        },
+        n3: {
+          required: true,
+        },
+      },
+      messages: {
+        n1: {
+          required: "Harap Mengisi Nilai Kompetensi 1"
+        },
+        n2: {
+          required: "Harap Mengisi Nilai Kompetensi 2"
+        },
+        n3: {
+          required: "Harap Mengisi Nilai Kompetensi 3"
+        },
+      },
+      errorElement: 'span',
+      errorPlacement: function(error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.custom-control').append(error);
+      },
+      highlight: function(element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
+      }
+    });
+  });
+</script>
 
 <!-- Code injected by live-server -->
 <script type="text/javascript">
