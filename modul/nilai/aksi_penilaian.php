@@ -20,14 +20,14 @@ if (isset($_POST['simpan'])) {
 
   if ($nilai > 0) {
     $input = mysqli_query($koneksi, "REPLACE INTO master_penilaian
-    VALUES ('$id',
-    '$user',
+                                      VALUES ('$id',
+                                      '$user',
                                       '$nilai1',
                                       '$nilai2',
                                       '$nilai3',
                                       '$jumlah',
                                       '$penguji',
-                                      NOW())") or die(mysqli_error($koneksi));
+                                      NOW())");
   } else {
     $input = mysqli_query($koneksi, "REPLACE INTO master_penilaian
                               VALUES (NULL,
@@ -37,7 +37,7 @@ if (isset($_POST['simpan'])) {
                               '$nilai3',
                               '$jumlah',
                               '$penguji',
-                              NOW())") or die(mysqli_error($koneksi));
+                              NOW())");
   }
 
 

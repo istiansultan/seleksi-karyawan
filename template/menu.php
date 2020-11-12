@@ -29,7 +29,7 @@
           ?>
 
           <li>
-            <a href="valid-nilai.html">
+            <a href="valid-nilai">
               <i data-feather="file-text"></i>
               <span> Validasi Nilai </span>
             </a>

@@ -27,19 +27,29 @@
                                     <img src="foto/<?php echo "$m[foto]"; ?>" alt="" class="avatar-xl rounded-circle" />
                                     <h5 class="mt-2 mb-0"><?php echo "$m[nama_calon]"; ?></h5>
                                     <h6 class="text-muted font-weight-normal mt-2 mb-4">Calon <?php echo "$d[nama_depart]"; ?></h6>
+                            
                                     <?php
                                     $hasil = mysqli_query($koneksi, "SELECT * FROM master_penilaian where id_calon='$a[id_calon]' and penguji='$_SESSION[username]'");
                                     $r = mysqli_fetch_array($hasil);
                                     $nilai = mysqli_num_rows($hasil);
 
-                                    
+
                                     if ($nilai > 0) {
-                                        echo "<h2 class='mb-0'>NILAI : $r[jumlah]</h2>";
+
+                                        echo "<div class='media px-3 py-3'>
+                                        <div class='media-body'>
+                                            <h4 class='mt-0 mb-1 font-size-22'>2100</h4>
+                                            <span class='text-muted'>Total Nilai </span>
+                                        </div>
+                                        <a href='task-list.html' class='btn btn-primary btn-sm mt-2 float-right'>
+                                        Edit
+                                    </a>
+                                    </div>";
                                     } else {
-                                       echo "<a href='penilaian?nilai=$a[id_calon]' type='button' class='btn btn-primary btn-sm mr-1'>Penilaian</a>";
+                                        echo "<a href='penilaian?nilai=$a[id_calon]' type='button' class='btn btn-primary btn-sm mr-1'>Penilaian</a>";
                                     }
                                     ?>
-                                    
+
                                     <div class="mt-4 pt-3 border-top text-left">
 
                                     </div>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['login'])) {
+  if ($_SESSION['level'] == 'admin') {
+    header("Location:admin");
+  } else {
+    header("Location:penguji");
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
