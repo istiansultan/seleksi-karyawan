@@ -12,7 +12,7 @@
             <h5 class="mb-4">Daftar Calon Wakil Direktur</h5>
             <div class="row">
                 <?php
-                $data = mysqli_query($koneksi, "select * from master_calon_depart");
+                $data = mysqli_query($koneksi, "select * from master_calon_depart where penguji='$_SESSION[username]'");
                 while ($a = mysqli_fetch_array($data)) {
                     $calon = mysqli_query($koneksi, "select * from master_calon where id_calon='$a[id_calon]'");
                     $m = mysqli_fetch_array($calon);
@@ -27,7 +27,7 @@
                                     <img src="foto/<?php echo "$m[foto]"; ?>" alt="" class="avatar-xl rounded-circle" />
                                     <h5 class="mt-2 mb-0"><?php echo "$m[nama_calon]"; ?></h5>
                                     <h6 class="text-muted font-weight-normal mt-2 mb-4">Calon <?php echo "$d[nama_depart]"; ?></h6>
-                            
+
                                     <?php
                                     $hasil = mysqli_query($koneksi, "SELECT * FROM master_penilaian where id_calon='$a[id_calon]' and penguji='$_SESSION[username]'");
                                     $r = mysqli_fetch_array($hasil);
@@ -38,10 +38,10 @@
 
                                         echo "<div class='media px-3 py-3'>
                                         <div class='media-body'>
-                                            <h4 class='mt-0 mb-1 font-size-22'>2100</h4>
+                                            <h4 class='mt-0 mb-1 font-size-22'>$r[jumlah]</h4>
                                             <span class='text-muted'>Total Nilai </span>
                                         </div>
-                                        <a href='task-list.html' class='btn btn-primary btn-sm mt-2 float-right'>
+                                        <a href='edit-penilaian?nilai=$a[id_calon]' class='btn btn-warning btn-sm mt-2 float-right'>
                                         Edit
                                     </a>
                                     </div>";

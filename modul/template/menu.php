@@ -36,31 +36,10 @@
           </li>
 
           <li>
-            <a href="javascript: void(0);" aria-expanded="false">
-              <i data-feather="file"></i>
-              <span> Rekap Penilaian </span>
-              <span class="menu-arrow"></span>
+            <a href="grafik-nilai">
+              <i data-feather="bar-chart-2"></i>
+              <span> Grafik Penilaian </span>
             </a>
-            <ul class="nav-second-level" aria-expanded="false">
-              <li>
-                <a href="forms-basic.html">Basic Elements</a>
-              </li>
-              <li>
-                <a href="forms-advanced.html">Advanced</a>
-              </li>
-              <li>
-                <a href="forms-validation.html">Validation</a>
-              </li>
-              <li>
-                <a href="forms-wizard.html">Wizard</a>
-              </li>
-              <li>
-                <a href="forms-editor.html">Editor</a>
-              </li>
-              <li>
-                <a href="forms-file-uploads.html">File Uploads</a>
-              </li>
-            </ul>
           </li>
 
         </ul>

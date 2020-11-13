@@ -1,10 +1,11 @@
 <?php
 session_start();
-include "../config/koneksi.php";
+error_reporting(E_ALL & ~E_NOTICE);
+include "../../config/koneksi.php";
 if (!isset($_SESSION['login'])) {
-    header("Location: index.php");
+  header("Location: index.php");
 }
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +63,7 @@ if (!isset($_SESSION['login'])) {
         </ul>
 
         <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
-          
+
 
           <li class="dropdown notification-list align-self-center profile-dropdown">
             <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -71,7 +72,7 @@ if (!isset($_SESSION['login'])) {
                 <div class="media-body text-left">
                   <h6 class="pro-user-name ml-2 my-0">
                     <span><?php echo $_SESSION['nama'] ?></span>
-                    <span class="pro-user-desc text-muted d-block mt-1"><?php  echo $_SESSION['level'];?></span>
+                    <span class="pro-user-desc text-muted d-block mt-1"><?php echo $_SESSION['level']; ?></span>
                   </h6>
                 </div>
                 <span data-feather="chevron-down" class="ml-2 align-self-center"></span>

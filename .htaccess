@@ -1,9 +1,11 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 
-RewriteRule ^admin modul/main.php [L]
-RewriteRule ^penguji modul/user.php [L]
+RewriteRule ^admin modul/home/main.php [L]
+RewriteRule ^penguji modul/home/user.php [L]
 RewriteRule ^logout config/logout.php [L]
+RewriteRule ^hasil modul/hasil.php [L]
+
 
 RewriteRule ^guru modul/guru/view_guru.php [L]
 RewriteRule ^profil-user modul/guru/view_user.php [L]
@@ -14,10 +16,11 @@ RewriteRule ^tambah-jurnal modul/jurnal/tambah_jurnal.php [L]
 RewriteRule ^aksi-jurnal modul/jurnal/aksi_jurnal.php [L]
 
 RewriteRule ^penilaian modul/nilai/penilaian.php [L]
+RewriteRule ^edit-penilaian modul/nilai/edit_penilaian.php [L]
 RewriteRule ^aksi-penilaian modul/nilai/aksi_penilaian.php [L]
 
 RewriteRule ^valid-nilai modul/valid/view_valid.php [L]
-RewriteRule ^aksi-penilaian modul/nilai/aksi_penilaian.php [L]
+RewriteRule ^aksi-valid modul/valid/aksi_valid.php [L]
 
 
 RewriteRule ^upload-file modul/upload/view_file.php [L]
