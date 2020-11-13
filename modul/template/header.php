@@ -71,7 +71,7 @@ if (!isset($_SESSION['login'])) {
                 <img src="assets/images/users/avatar-7.jpg" alt="user-image" class="rounded-circle align-self-center" />
                 <div class="media-body text-left">
                   <h6 class="pro-user-name ml-2 my-0">
-                    <span><?php echo $_SESSION['nama'] ?></span>
+                    <span><?php echo $_SESSION['nama_alias'] ?></span>
                     <span class="pro-user-desc text-muted d-block mt-1"><?php echo $_SESSION['level']; ?></span>
                   </h6>
                 </div>

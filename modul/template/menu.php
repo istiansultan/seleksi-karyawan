@@ -14,6 +14,13 @@
               <span class='badge badge-success float-right'>1</span>
               <span> Awal </span>
             </a>
+          </li>
+          <li>
+              <a href='rekap-nilai'>
+              <i data-feather='home'></i>
+              <span class='badge badge-success float-right'>1</span>
+              <span> Rekap Nilai </span>
+            </a>
           </li>";
           } else {
             echo " <li>
@@ -22,25 +29,20 @@
               <span class='badge badge-success float-right'>1</span>
               <span> Awal </span>
             </a>
-          </li>";
+          </li>
+          
+          <li>
+          <a href='valid-nilai'>
+          <i data-feather='file-text'></i>
+          <span class='badge badge-success float-right'>1</span>
+          <span> Awal </span>
+        </a>
+      </li>";
           }
 
 
           ?>
 
-          <li>
-            <a href="valid-nilai">
-              <i data-feather="file-text"></i>
-              <span> Validasi Nilai </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="grafik-nilai">
-              <i data-feather="bar-chart-2"></i>
-              <span> Grafik Penilaian </span>
-            </a>
-          </li>
 
         </ul>
       </div>

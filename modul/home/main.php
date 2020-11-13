@@ -8,7 +8,7 @@
     <div class="content">
         <!-- Start Content-->
         <div class="container-fluid">
-            <div class="row page-title">
+            <div class="row page-title align-items-center">
                 <div class="col-sm-4 col-xl-6">
                     <h4 class="mb-1 mt-0">Horizontal</h4>
                 </div>
@@ -16,11 +16,11 @@
             </div>
             <!-- products -->
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-13">
                     <div class="card">
                         <div class="card-body">
                             <a href="" class="btn btn-primary btn-sm float-right">
-                                <i class='uil uil-export ml-1'></i> Export
+                                <i class='uil uil-export ml-1'></i> Export Excel
                             </a>
                             <h5 class="card-title mt-0 mb-0 header-title">Rekap Penilaian</h5>
                             <?php
@@ -73,7 +73,7 @@
                                         ?>
                                             <tr>
                                                 <td><?php echo $no; ?></td>
-                                                <td><img src="foto/<?php echo "$m[foto]"; ?>" alt="" class="avatar-xl rounded-circle" /></td>
+                                                <td><img src="foto/<?php echo "$m[foto]"; ?>" alt="" class="mr-3 avatar rounded-circle" /></td>
                                                 <td><?php echo $m['nama_calon']; ?><br><?php echo $d['nama_depart']; ?></td>
                                                 <?php
                                                 if ($count1 > 0) {
@@ -145,12 +145,12 @@
                                                     echo "<td> <span class='badge badge-soft-danger py-1'>Belum Validasi</span></td>";
                                                 }
                                                 ?>
-                                                <?php 
-                                                $total = mysqli_query($koneksi, "SELECT SUM(jumlah) AS total1 FROM master_penilaian WHERE id_calon='$a[id_calon]'");
-                                                while ($akhir = mysqli_fetch_array($total)){
+                                                <?php
+                                                $total = mysqli_query($koneksi, "SELECT id_calon, SUM(jumlah) AS total1 FROM master_penilaian WHERE id_calon='$a[id_calon]'");
+                                                while ($akhir = mysqli_fetch_array($total)) {
                                                     echo "<td>$akhir[total1]</td>";
                                                 }
-                                                ?>
+                                                ?>  
                                                 <!--<td><span class="badge badge-soft-danger py-1">Pending</span></td>-->
                                             </tr>
                                         <?php } ?>

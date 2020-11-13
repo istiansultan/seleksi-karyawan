@@ -21,7 +21,8 @@ if ($ketemu > 0) {
     $_SESSION['password']    = $_POST['password'];
     $_SESSION['tapel']       = $_POST['tapel'];
     $_SESSION['nama']        = $data['nama'];
-    $_SESSION['level']        = $data['level'];
+    $_SESSION['nama_alias']  = $data['nama_alias'];
+    $_SESSION['level']       = $data['level'];
 
     header("location:../admin");
   } else {
@@ -30,7 +31,8 @@ if ($ketemu > 0) {
     $_SESSION['password']    = $_POST['password'];
     $_SESSION['tapel']       = $_POST['tapel'];
     $_SESSION['nama']        = $data['nama'];
-    $_SESSION['level']        = $data['level'];
+    $_SESSION['nama_alias']  = $data['nama_alias'];
+    $_SESSION['level']       = $data['level'];
 
     header("location:../penguji");
   }

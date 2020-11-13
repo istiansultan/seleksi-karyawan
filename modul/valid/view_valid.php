@@ -8,8 +8,10 @@ $data3 = mysqli_query($koneksi, " select * from
 $peserta = mysqli_fetch_array($data3);
 
 
-$nilai = mysqli_query($koneksi, "select * from master_valid where penguji='$_SESSION[username]'");
+$nilai = mysqli_query($koneksi, "select * from master_penilaian where penguji='$_SESSION[username]'");
 $jn = mysqli_num_rows($nilai);
+$valid = mysqli_query($koneksi, "select * from master_valid where penguji='$_SESSION[username]'");
+$jnh = mysqli_num_rows($valid);
 $jnn = mysqli_fetch_array($nilai);
 
 
@@ -26,7 +28,7 @@ $jnn = mysqli_fetch_array($nilai);
         <div class="col-xl-12">
           <div class="card">
             <div class="card-body pt-2">
-              <h6 class="header-title mb-4">Penguji : <?php echo $peserta['nama']; ?></h6>
+              <h6 class="header-title mb-4">Penguji : <?php echo $peserta['nama_alias']; ?></h6>
               <?php
               $data = mysqli_query($koneksi, "select * from master_calon_depart
                                     where penguji='$_SESSION[username]' order by id_calon");
@@ -63,10 +65,14 @@ $jnn = mysqli_fetch_array($nilai);
                       <h5 class="mt-0 mb-1 font-weight-bold">Validasi Penilaian Calon Wakil Direktur</h5>
                       <p class="text-muted mb-2">Pastikan Sudah Melakukan penilaian </p>
                       <?php
-                      if ($jn < 6) {
+                      if ($jnh > 0) {
                         echo "<a type='button' name='valid' class='btn btn-danger mt-2 mr-1 disabled' id='btn-new-event'><i class='uil-plus-circle'></i>Validasi penilaian</a>";
                       } else {
-                        echo "<a type='button' name='valid' href='aksi-valid?valid=$jnn[penguji]' onclick=\"javascript: return confirm ('Anda Yakin APPROVE ?')\" class='btn btn-danger mt-2 mr-1' id='btn-new-event'><i class='uil-plus-circle'></i>Validasi penilaian</a>";
+                        if ($jn == 6) {
+                          echo "<a type='button' name='valid' href='aksi-valid?valid=$jnn[penguji]' onclick=\"javascript: return confirm ('Anda Yakin APPROVE ?')\" class='btn btn-danger mt-2 mr-1' id='btn-new-event'><i class='uil-plus-circle'></i>Validasi penilaian</a>";
+                        } else {
+                          echo "<a type='button' name='valid' class='btn btn-danger mt-2 mr-1 disabled' id='btn-new-event'><i class='uil-plus-circle'></i>Validasi penilaian</a>";
+                        }
                       }
                       ?>
 

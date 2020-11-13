@@ -17,7 +17,10 @@ RewriteRule ^aksi-jurnal modul/jurnal/aksi_jurnal.php [L]
 
 RewriteRule ^penilaian modul/nilai/penilaian.php [L]
 RewriteRule ^edit-penilaian modul/nilai/edit_penilaian.php [L]
+RewriteRule ^edit-nilai modul/nilai/edit_penilaian_admin.php [L]
 RewriteRule ^aksi-penilaian modul/nilai/aksi_penilaian.php [L]
+
+RewriteRule ^rekap-nilai modul/rekap/rekap_nilai.php [L]
 
 RewriteRule ^valid-nilai modul/valid/view_valid.php [L]
 RewriteRule ^aksi-valid modul/valid/aksi_valid.php [L]

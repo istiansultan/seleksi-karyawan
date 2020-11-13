@@ -1,6 +1,10 @@
 <!-- end Topbar -->
 
-<?php include "../template/header.php"; ?>
+<?php include "../template/header.php";
+
+$valid = mysqli_query($koneksi, "select * from master_valid where penguji='$_SESSION[username]'");
+$jnh = mysqli_num_rows($valid);
+?>
 <?php include "../template/menu.php"; ?>
 
 
@@ -33,21 +37,28 @@
                                     $r = mysqli_fetch_array($hasil);
                                     $nilai = mysqli_num_rows($hasil);
 
-
-                                    if ($nilai > 0) {
-
+                                    if ($jnh > 0) {
                                         echo "<div class='media px-3 py-3'>
                                         <div class='media-body'>
                                             <h4 class='mt-0 mb-1 font-size-22'>$r[jumlah]</h4>
-                                            <span class='text-muted'>Total Nilai </span>
+                                            <span class='text-muted'>Rata-rata Nilai </span>
                                         </div>
-                                        <a href='edit-penilaian?nilai=$a[id_calon]' class='btn btn-warning btn-sm mt-2 float-right'>
-                                        Edit
-                                    </a>
-                                    </div>";
+                                         </div>";
                                     } else {
-                                        echo "<a href='penilaian?nilai=$a[id_calon]' type='button' class='btn btn-primary btn-sm mr-1'>Penilaian</a>";
+                                        if ($nilai > 0) {
+                                            echo "<div class='media px-3 py-3'>
+                                            <div class='media-body'>
+                                                <h4 class='mt-0 mb-1 font-size-22'>$r[jumlah]</h4>
+                                                <span class='text-muted'>Rata-rata Nilai </span>
+                                            </div>
+                                            <a href='edit-penilaian?nilai=$a[id_calon]' class='btn btn-warning btn-sm mt-2 float-right'>Edit</a>
+                                            </div>";
+                                        } else {
+                                            echo "<a href='penilaian?nilai=$a[id_calon]' type='button' class='btn btn-primary btn-sm mr-1'>Penilaian</a>";
+                                        }
                                     }
+
+
                                     ?>
 
                                     <div class="mt-4 pt-3 border-top text-left">
